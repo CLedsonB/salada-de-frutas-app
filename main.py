@@ -98,63 +98,40 @@ def jan_game():
     jGame.geometry("700x1000")
     janGame= Frame(jGame, width=750, height=1000, bg=corBorda, pady=0, padx=0, relief='flat')
     janGame.place(x=0, y=0)
+    
+# DISTRIBUICAO DE ENTRADAS
+
+    for i in range(5):
+       ent = Input(jGame,width=13,placeholder=temas[i])
+       ent.place(x=10,y=130+70*i)
+
+    for j in range(5):
+       ent = Input(jGame,width=13,placeholder=temas[j+5])
+       ent.place(x=360,y=130+70*j)
+                
+
+# DISTRIBUICAO DE BOTOES +5
+
+    for i in range(5):
+        bp = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
+        bp.place(x=250,y=130+70*i)
+        
+    for j in range(5):
+        bp = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
+        bp.place(x=600,y=130+70*j)
+        
+# DEMAIS ELEMENTOS
 
     b1 = Button(jGame, text="Sortear",width=5, height=1,command=lambda:[sortear(letra),gerenciaTempo(contador)], relief='flat', anchor='nw', overrelief='solid', font=('Ivy 6'), bg=corTitulo, fg=corFundo)
     letra = Label(jGame, text="?", height=1, padx=1,pady=1, relief='flat', anchor='center', font=('Ivy 14'), bg=corFundo, fg=corTitulo)
     b2 = Button(jGame, text="Stop",width=5, height=1, relief='flat', anchor='nw', overrelief='solid', font=('Ivy 6'), bg=corTitulo, fg=corFundo)
     contador = Label(jGame, text="00 : 00", height=1, padx=1,pady=1, relief='flat', anchor='center', font=('Ivy 10'), bg=corFundo, fg=corTitulo)
-
-    bp1 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp2 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp3 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp4 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp5 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp6 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp7 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp8 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp9 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-    bp0 = Button(jGame, text="+5", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
-
-    ent1 = Input(jGame,width=13,placeholder="Nome")
-    ent2 = Input(jGame,width=13,placeholder="Cor")
-    ent3 = Input(jGame,width=13,placeholder="Comida")
-    ent4 = Input(jGame,width=13,placeholder="Objeto")
-    ent5 = Input(jGame,width=13,placeholder="Idioma")
-    ent6 = Input(jGame,width=13,placeholder="Esporte")
-    ent7 = Input(jGame,width=13,placeholder="Local")
-    ent8 = Input(jGame,width=13,placeholder="Filme")
-    ent9 = Input(jGame,width=13,placeholder="Animal")
-    ent0 = Input(jGame,width=13,placeholder="Anatomia")
-
     pontuacao = Label(jGame, text="Total : 0", height=1, padx=1,pady=1, relief='flat', anchor='center', font=('Ivy 13'), bg=corFundo, fg=corTitulo)
 
     b1.place(x=10,y=10)
     letra.place(x=250, y=10)
     b2.place(x=340,y=10)
     contador.place(x=550, y=10)
-
-    bp1.place(x=250,y=130)
-    bp2.place(x=600,y=130)
-    bp3.place(x=250,y=200)
-    bp4.place(x=600,y=200)
-    bp5.place(x=250,y=270)
-    bp6.place(x=600,y=270)
-    bp7.place(x=250,y=340)
-    bp8.place(x=600,y=340)
-    bp9.place(x=250,y=410)
-    bp0.place(x=600,y=410)
-
-    ent1.place(x=10,y=130)
-    ent2.place(x=360,y=130)
-    ent3.place(x=10,y=200)
-    ent4.place(x=360,y=200)
-    ent5.place(x=10,y=270)
-    ent6.place(x=360,y=270)
-    ent7.place(x=10,y=340)
-    ent8.place(x=360,y=340)
-    ent9.place(x=10,y=410)
-    ent0.place(x=360,y=410)
-
     pontuacao.place(x=250,y=500)
 
 # ______Janela personalizar_____________
@@ -166,34 +143,19 @@ def jan_person():
     janPerson= Frame(jPerson, width=750, height=1000, bg=corBorda, pady=0, padx=0, relief='flat')
     janPerson.place(x=0, y=0)
     
+# DISTRIBUICAO DE ENTRADAS
+
+    for i in range(10):
+       ent = Input(jPerson,width=13,placeholder=temas[i])
+       ent.place(x=200,y=130+70*i)
+       
+# DEMAIS ELEMENTOS
+
     titulo = Label(jPerson, text="Altere os temas da partida!!", height=1, padx=1,pady=1, relief='flat', anchor='center', font=('Ivy 13'), bg=corFundo, fg=corTitulo)
-    
-    ent1 = Input(jPerson,width=13,placeholder="Nome")
-    ent2 = Input(jPerson,width=13,placeholder="Cor")
-    ent3 = Input(jPerson,width=13,placeholder="Comida")
-    ent4 = Input(jPerson,width=13,placeholder="Objeto")
-    ent5 = Input(jPerson,width=13,placeholder="Idioma")
-    ent6 = Input(jPerson,width=13,placeholder="Esporte")
-    ent7 = Input(jPerson,width=13,placeholder="Local")
-    ent8 = Input(jPerson,width=13,placeholder="Filme")
-    ent9 = Input(jPerson,width=13,placeholder="Animal")
-    ent0 = Input(jPerson,width=13,placeholder="Anatomia")
-    
     bc = Button(jPerson, text="V", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo)
     be = Button(jPerson, text="X", width=1, height=1, font=("Ivy 4"), bg=corFundo, fg=corTitulo) 
     
     titulo.place(x=60,y=20)
-    ent1.place(x=200,y=130)
-    ent2.place(x=200,y=210)
-    ent3.place(x=200,y=290)
-    ent4.place(x=200,y=370)
-    ent5.place(x=200,y=450)
-    ent6.place(x=200,y=530)
-    ent7.place(x=200,y=610)
-    ent8.place(x=200,y=690)
-    ent9.place(x=200,y=780)
-    ent0.place(x=200,y=860)
-    
     bc.place(x=60,y=930)
     be.place(x=550,y=930)
 
